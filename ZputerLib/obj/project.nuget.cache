@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "WaylEhSi/Lw=",
+  "success": true,
+  "projectFilePath": "C:\\Users\\zrice\\source\\repos\\Zputer\\ZputerLib\\ZputerLib.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\zrice\\.nuget\\packages\\microsoft.win32.systemevents\\10.0.12\\microsoft.win32.systemevents.10.0.12.nupkg.sha512",
+    "C:\\Users\\zrice\\.nuget\\packages\\system.drawing.common\\10.0.12\\system.drawing.common.10.0.12.nupkg.sha512"
+  ],
+  "logs": []
+}

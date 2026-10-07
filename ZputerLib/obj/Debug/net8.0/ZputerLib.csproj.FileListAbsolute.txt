@@ -1,0 +1,12 @@
+C:\Users\zrice\source\repos\Zputer\ZputerLib\bin\Debug\net8.0\ZputerLib.deps.json
+C:\Users\zrice\source\repos\Zputer\ZputerLib\bin\Debug\net8.0\ZputerLib.dll
+C:\Users\zrice\source\repos\Zputer\ZputerLib\bin\Debug\net8.0\ZputerLib.pdb
+C:\Users\zrice\source\repos\Zputer\ZputerLib\obj\Debug\net8.0\ZputerLib.csproj.AssemblyReference.cache
+C:\Users\zrice\source\repos\Zputer\ZputerLib\obj\Debug\net8.0\ZputerLib.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\zrice\source\repos\Zputer\ZputerLib\obj\Debug\net8.0\ZputerLib.AssemblyInfoInputs.cache
+C:\Users\zrice\source\repos\Zputer\ZputerLib\obj\Debug\net8.0\ZputerLib.AssemblyInfo.cs
+C:\Users\zrice\source\repos\Zputer\ZputerLib\obj\Debug\net8.0\ZputerLib.csproj.CoreCompileInputs.cache
+C:\Users\zrice\source\repos\Zputer\ZputerLib\obj\Debug\net8.0\ZputerLib.dll
+C:\Users\zrice\source\repos\Zputer\ZputerLib\obj\Debug\net8.0\refint\ZputerLib.dll
+C:\Users\zrice\source\repos\Zputer\ZputerLib\obj\Debug\net8.0\ZputerLib.pdb
+C:\Users\zrice\source\repos\Zputer\ZputerLib\obj\Debug\net8.0\ref\ZputerLib.dll
