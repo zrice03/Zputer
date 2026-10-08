@@ -55,6 +55,13 @@ namespace ZputerLib
 		}
 	}
 
+	/// <summary>
+	/// And chip. <br/>
+	/// Inputs:<br/>
+	/// 0-1 - in<br/>
+	/// Outputs:<br/>
+	/// 0
+	/// </summary>
 	public class And : Chip
 	{
 		public static Pen compPen = new Pen(Color.Red);
@@ -81,6 +88,13 @@ namespace ZputerLib
 		}
 	}
 
+	/// <summary>
+	/// Or chip. <br/>
+	/// Inputs:<br/>
+	/// 0-1 - in <br/>
+	/// Outputs:<br/>
+	/// 0 - out
+	/// </summary>
 	public class Or : Chip
 	{
 		public static Pen compPen = new Pen(Color.Green);
@@ -106,6 +120,13 @@ namespace ZputerLib
 		}
 	}
 
+	/// <summary>
+	/// Nand chip. <br/>
+	/// Inputs:<br/>
+	/// 0 - in <br/>
+	/// Outputs:<br/>
+	/// 0 - out
+	/// </summary>
 	public class Not : Chip
 	{
 		public static Pen compPen = new Pen(Color.Blue);
@@ -129,6 +150,13 @@ namespace ZputerLib
 		}
 	}
 
+	/// <summary>
+	/// Nand chip. <br/>
+	/// Inputs:<br/>
+	/// 0-1 - in <br/>
+	/// Outputs:<br/>
+	/// 0 - out
+	/// </summary>
 	public class Nand : Chip
 	{
 		And and;
@@ -168,7 +196,14 @@ namespace ZputerLib
 
 		}
 	}
-
+	
+	/// <summary>
+	/// Xor chip. <br/>
+	/// Inputs:<br/>
+	/// 0-1 - in <br/>
+	/// Outputs:<br/>
+	/// 0 - out
+	/// </summary>
 	public class Xor : Chip
 	{
 		Or or;
@@ -214,6 +249,14 @@ namespace ZputerLib
 		}
 	}
 
+	/// <summary>
+	/// Mux chip. <br/>
+	/// Inputs:<br/>
+	/// 0-1 - in <br/>
+	///	2 - sel <br/>
+	/// Outputs:<br/>
+	/// 0 - out
+	/// </summary>
 	public class Mux : Chip
 	{
 		And and0;
@@ -269,6 +312,14 @@ namespace ZputerLib
 		}
 	}
 
+	/// <summary>
+	/// Mux chip. <br/>
+	/// Inputs:<br/>
+	/// 0 - in <br/>
+	///	1 - sel <br/>
+	/// Outputs:<br/>
+	/// 0-1 - out
+	/// </summary>
 	public class DMux : Chip
 	{
 		Not not;
@@ -315,6 +366,65 @@ namespace ZputerLib
 			bmp.SetPixel(xOffset + 5, yOffset + 1, wireColor);
 			bmp.SetPixel(xOffset + 1, yOffset + 1, connectionColor);
 			bmp.SetPixel(xOffset + 3, yOffset + 4, connectionColor);
+		}
+	}
+
+	/// <summary>
+	/// Mux chip. <br/>
+	/// Inputs:<br/>
+	/// 0-2 - sum <br/>
+	/// Outputs:<br/>
+	/// 0 - sum <br/>
+	///	1 - carry
+	/// </summary>
+	public class Add : Chip
+	{
+		private Xor xor;
+		private And and;
+		private Or or;
+		private Not not;
+		private Mux mux0;
+		private Mux mux1;
+		
+		public Add() : base(3,2) { }
+
+		public override Add Calc()
+		{
+			if (FastMode)
+			{
+				xor = null;
+				and = null;
+				or = null;
+				not = null;
+				mux0 = null;
+				mux1 = null;
+				
+				int sum = 0;
+				for (int i = 0; i < 3; i++) sum += inputs[i] ? 1 : 0;
+				outputs[1] = sum >= 2;
+				outputs[0] = sum % 2 == 1;
+				return this;
+			}
+
+			if (xor == null)
+			{
+				xor = new();
+				and = new ();
+				or = new();
+				not = new();
+				mux0 = new();
+				mux1 = new();
+			}
+
+			xor.SetInputs(inputs[0], inputs[1]).Calc();
+			not.SetInputs(xor[0]).Calc();
+			and.SetInputs(inputs[1], inputs[2]).Calc();
+			or.SetInputs(inputs[1], inputs[2]).Calc();
+			mux0.SetInputs(xor[0], not[0]).Calc();
+			mux1.SetInputs(and[0], or[0]).Calc();
+			outputs[0] = mux0[0];
+			outputs[1] = mux1[0];
+			return this;
 		}
 	}
 }

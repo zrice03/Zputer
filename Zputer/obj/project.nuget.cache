@@ -1,11 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "En9yT3P1BZ8=",
+  "dgSpecHash": "ByHNvGyNryw=",
   "success": true,
-  "projectFilePath": "C:\\Users\\zrice\\source\\repos\\Zputer\\Zputer\\Zputer.csproj",
+  "projectFilePath": "/home/zeb/source/Zputer/Zputer/Zputer.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\zrice\\.nuget\\packages\\microsoft.win32.systemevents\\10.0.12\\microsoft.win32.systemevents.10.0.12.nupkg.sha512",
-    "C:\\Users\\zrice\\.nuget\\packages\\system.drawing.common\\10.0.12\\system.drawing.common.10.0.12.nupkg.sha512"
+    "/home/zeb/.nuget/packages/microsoft.win32.systemevents/10.0.12/microsoft.win32.systemevents.10.0.12.nupkg.sha512",
+    "/home/zeb/.nuget/packages/system.drawing.common/10.0.12/system.drawing.common.10.0.12.nupkg.sha512",
+    "/home/zeb/.nuget/packages/microsoft.netcore.app.host.linux-x64/8.0.31/microsoft.netcore.app.host.linux-x64.8.0.31.nupkg.sha512"
   ],
   "logs": []
 }
